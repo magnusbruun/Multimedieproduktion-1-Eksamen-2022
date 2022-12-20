@@ -1,0 +1,2835 @@
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #283852;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 40px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+    scroll-behavior: smooth;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 200;
+}
+
+body {
+    background: rgb(221, 221, 221);
+}
+
+header {
+    background-color: #283852;
+}
+
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    z-index: 2;
+}
+
+.nav-item a{
+    color: white;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.nav-item a:hover {
+    transition: all 0.3s ease 0s;
+}
+
+.logo {
+    width: 80px;
+}
+
+#search {
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+}
+
+/*Burgermenu*/
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+/*Break point max-769px*/
+@media (max-width:769px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 100px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #283852;
+        width: 100%;
+        text-align: center;
+        transition: all 0.3s ease 0s;
+        opacity: 90%;
+    }
+
+    .nav-menu li ul.dropdown {
+        position: absolute;
+        display: none;
+    }
+
+    .nav-item i {
+        visibility: hidden;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+    /*Burgermenu slut*/
+
+    /*searchbar*/
+    #search {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 4px;
+        width: 28px;
+        height: 28px;
+        background: #5d6f8d;
+        border-radius: 60px;
+        transition: .3s;
+        overflow: hidden;
+    }
+
+    #search.active {
+        width: 100px;
+        
+    }
+
+    #search .input {
+        position: relative;
+        width: 100px;
+        height: 28px;
+        left: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #sogefelt::placeholder{
+        color: white;
+    }
+
+    #search .input input {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        background-color: #5d6f8d;
+    }
+    /*searchbar slut*/
+
+    /*forside video*/
+    .forside-overskrift {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-bottom: 150px;
+        z-index: 1;
+    }
+    
+    .forside-overskrift h1 {
+        font-size: 40px;
+        font-family: 'rubik distressed';
+    }
+    
+    .forside-overskrift p {
+        font-size: 15px;
+        font-style: italic;
+    }
+
+    .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .video {
+        position: relative;
+        right: 40px;
+        height: 800px;
+        opacity: 95%;
+    }
+    /*forside video slut*/
+
+    /*forside-iconer*/
+    .icon-container {
+        position: absolute;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .icons {
+        display: flex;
+    }
+
+    .icons li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .icons i {
+        padding: 10px 50px;
+    }
+    
+    #rute-icon {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #gear-icon {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #blog-icon {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+    }
+    /*forside-iconer slut*/
+
+    /*niveau section*/
+    .niveau-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .niveau {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-width: 320px;
+    }
+    
+    .niveau h2 {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .slide-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+        max-width: 1120px;
+        width: 100%;
+        padding: 40px 0;
+        margin-bottom: 80px;
+    }
+
+    .slide-content {
+        margin: 0 40px;
+    }
+
+    .card {
+        width: 320px;
+        border-radius: 25px;
+        background-color: white;
+        box-shadow: 0 2px 20px rgb(200, 200, 200);
+    }
+
+    .card-content {
+        position: relative;
+    }
+
+    .image-content,
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 14px;
+        border-radius: 30px;
+        background:white;
+    }
+
+    .image-content {
+        position: relative;
+        row-gap: 5px;
+        padding: 25px 0;
+    }
+
+    .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color:#283852;
+        border-radius: 25px 25px 0 25px;
+        box-shadow: 0 2px 20px rgb(200, 200, 200);
+    }
+
+    .overlay::before,
+    .overlay::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -40px;
+        height: 40px;
+        width: 40px;
+        background-color:#283852;
+    }
+
+    .overlay::after {
+        border-radius: 0 25px 0 0;
+        background-color: white;
+    }
+
+    .card-image img{
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: #ffffff;
+        padding: 3px;
+        object-fit: cover;
+    }
+
+    .card-image .card-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .navn {
+        font-size: 22px;
+        color: #283852;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        font-size: 14px;
+        color: rgb(100, 100, 100);
+        text-align: center;
+    }
+
+    .button {
+        border: none;
+        font-size: 16px;
+        color: white;
+        padding: 8px 16px;
+        background-color: #283852;
+        border-radius: 6px;
+        margin: 14px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .button:hover {
+        background-color: #5d6f8d;
+        border-radius: 10px; 
+    }
+    /*niveau section slut*/
+
+    /*galleri*/
+    .galleri {
+        background-color: #283852;
+        padding: 10px 0;
+    }
+
+    .galleri h2{
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+        color: white;
+    }
+
+    .slide-img {
+        height: 100%;
+        text-align: center;
+    }
+
+    .slide-img img{
+        width: 280px;
+        border-radius: 8px;
+    }
+
+
+    .slider {
+        position: relative;
+        left: 10%;
+        width: 90%;
+        height: 430px;
+        overflow: hidden;
+    }
+
+    .slider-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+        pointer-events: none;
+        transition: 0s ease-in;
+    }
+
+    .pile {
+        display: flex;
+        justify-content: space-between;
+        font-size: 30px;
+        margin: 0 20px;
+        color: white;
+        opacity: 15%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .udforsk {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 60px;
+    }
+
+    .udforsk-knap a {
+        position: relative;
+        background: white;
+        color: #283852;
+        width: 80px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /*galleri slut*/
+
+    /*rutevejledning*/
+    .rute-wrapper {
+        position: relative;
+        padding-top: 20px;
+    }
+
+    .rutevejl {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .rutevejl p {
+        font-size: 16px;
+        margin-bottom: 80px;
+    }
+
+    .rute-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+        max-width: 1120px;
+        width: 100%;
+        padding: 40px 0;
+        margin-bottom: 150px;
+    }
+
+    .rute-content {
+        margin: 0 40px;
+    }
+
+    .rute-card {
+        width: 320px;
+        border-radius: 25px;
+        background-color: white;
+        position: relative;
+        box-shadow: 0 2px 20px rgb(200, 200, 200);
+    }
+
+    .rute-image-content,
+    .rute-card-content {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 14px;
+    }
+
+    .rute-image-content {
+        position: relative;
+        row-gap: 5px;
+        padding: 25px 25px;
+    }
+
+    .rute-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(21, 119, 26);
+        border-radius: 25px 25px 0 25px;
+        box-shadow: 0 2px 20px rgb(200, 200, 200);
+    }
+
+    .rute-overlay::after {
+        border-radius: 0 25px 0 0;
+        background-color: white;
+    }
+
+    .rute-card-image img{
+        position: relative;
+        width: 100%;
+        height: 200px;
+        border-radius: 20px;
+        background: #ffffff;
+        padding: 3px;
+        object-fit: cover;
+    }
+
+    .rute-card-image .card-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .rute-navn {
+        display: flex;
+        justify-content: center;
+        font-size: 22px;
+        color: #283852;
+        margin-bottom: 10px;
+    }
+
+    .rute-overskrift {
+        margin: 14px 0;
+    }
+
+    .rute-description {
+        font-size: 14px;
+        color: rgb(100, 100, 100);
+        margin-bottom: 10px;
+    }
+
+    .rute-button {
+        border: none;
+        font-size: 16px;
+        color: white;
+        padding: 8px 16px;
+        background-color: #283852;
+        border-radius: 6px;
+        margin: 14px 0;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .rute-button:hover {
+        opacity: 70%;
+    }
+
+    #icon-grøn {
+        color: rgb(21, 119, 26);
+        font-size: 25px;
+        padding-left: 10px;
+        margin: 20px 0;
+    }
+
+    .rute-overlay-gul {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(218, 218, 52);
+        border-radius: 25px 25px 0 25px;
+    }
+
+    #icon-gul {
+        color: rgb(218, 218, 52);
+        font-size: 25px;
+        padding-left: 10px;
+        margin: 20px 0;
+    }
+
+    .rute-overlay-rød {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(181, 42, 42);
+        border-radius: 25px 25px 0 25px;
+    }
+
+    #icon-rød {
+        color: rgb(181, 42, 42);
+        font-size: 25px;
+        padding-left: 10px;
+        margin: 20px 0;
+    }   
+    /*rutevejledning slut*/
+
+    /*Event sektion*/
+    .tester {
+        display: flex;
+        justify-content: center;
+    }
+
+    .event-billede img {
+        position: relative;
+        width: 100%;
+        opacity: 85%;
+    }
+
+    .event-overskrift {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        top: 200px;
+        z-index: 1;
+        color: white;
+    }
+
+    .event-overskrift h2 {
+        font-family: 'rubik distressed';
+    }
+
+    .event-overskrift p {
+        padding-top: 10px;
+    }
+
+    .event-video {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .event-video p {
+        font-size: 12px;
+    }
+
+    .event-video iframe {
+        width: 350px;
+        height: 200px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .tekst-wrapper {
+        display: flex;
+        justify-content: center;
+        text-align: start;
+        padding: 12px 15px;
+        margin: 60px auto;
+        line-height: 1.5rem;
+    }
+    
+    .event-tekst {
+        width: 90%;
+        border-radius: 10px;
+        padding: 8px 10px;
+        color: rgb(54, 54, 54);
+    }
+
+    #event-br2 {
+        padding-top: 10px;
+    }
+
+    #event-br3 {
+        padding-top: 10px;
+    }
+
+    .event-tekst {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .event-video2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .event-video2 p {
+        font-size: 12px;
+    }
+
+    .event-video2 iframe{
+        width: 350px;
+        height: 200px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .event-tilmeld {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .tilmeld {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 60px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .tilmeld-knap a {
+        position: relative;
+        background: #283852;
+        color: white;
+        width: 80px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tilmelding-wrapper {
+        min-height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .tilmelding-godkendt img {
+        width: 100px;
+        padding-bottom: 20px;
+    }
+
+    .tilmelding-godkendt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 1.5rem;
+        color: #202020;
+    }
+
+    .tilmelding-godkendt p {
+        font-size: 18px;
+    }
+
+    .tilmelding-godkendt a {
+        color: #283852;       
+    }
+
+    /*Event slut*/
+
+    /*Blog*/
+    .blog-overskrift {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        color: #ffffff;
+        margin-top: 50px;
+        font-size: 20px;
+        width: 100%;
+        box-shadow: -5px 0px rgb(255, 242, 1);
+    }
+    
+    .blog-overskrift h1 {
+        position: absolute;
+       display: flex;
+       justify-content: center;
+       padding: 10px;
+    }
+
+    .blog-overskrift p {
+        padding: 5px;
+        font-size: 18px;
+        font-style: italic;
+    }
+
+    .detalje-img img{
+        position: relative;
+        top: 0;
+        width: 100%;
+        opacity: 90%;
+    }
+
+    .cykler-wrapper{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+
+    #stjerne1 {
+        font-size: 16px;
+    }
+    
+    #stjerne3 {
+        font-size: 16px;
+    }
+
+    .blog-cykler {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        padding: 10px;
+        margin-top: 50px;
+        color: #bababa;
+    }
+
+    .blog-cykler i {
+        font-size: 22px;
+        color: rgb(228, 228, 11);
+        padding-bottom: 10px;
+    }
+
+    .blog-cykler p {
+        padding-top: 15px;
+        font-style: italic;
+        font-size: 18px;
+    }
+
+    .slider {
+        position: relative;
+        left: 10%;
+        width: 90%;
+        height: 430px;
+        overflow: hidden;
+    }
+
+    .blog-slide-img {
+        height: 100%;
+        text-align: center;
+        color: white;
+    }
+
+    .blog-slide-img img{
+        width: 400px;
+        border-radius: 8px;
+    }
+
+    .blog-slide-img p {
+        padding-top: 10px;
+        font-size: 18px;
+        font-style: italic;
+    }
+
+    .blog-galleri {
+        background-color: #202020;
+    }
+
+    #tredjeplads {
+        color: rgb(151, 100, 7);
+    }
+
+    #andenplads {
+        color: rgb(213, 213, 213);
+    }
+
+    #førsteplads {
+        color: rgb(228, 228, 11);
+    }
+
+    .info-wrapper {
+        position: relative;
+        margin-top: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .infographic h2 {
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .infographic img{
+        width: 350px;
+        display: flex;
+        border-radius: 10px;
+    }
+
+    .info-comp {
+        position: absolute;
+        z-index: 1;
+        top:60px;
+        visibility: hidden;
+    }
+
+    .blog-info-tekst {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        line-height: 1.5rem;
+        margin-bottom: 50px;
+        max-width: 350px;
+    }
+
+    .blog-info-tekst h3 {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 15px;
+    }
+
+    .blog-info-tekst span {
+        font-style: italic;
+        padding: 0 8px;
+    }
+
+    #blog-info2 {
+        padding-top: 15px;
+    }
+    /*blog slut*/
+
+    /*rutevejledning*/
+    .rutevejl-billede img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .rutevejl-tekst {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        color: #202020;
+    }
+
+    .rutevejl-tekst p {
+        padding-top: 5px;
+        font-size: 18px;
+    }
+
+    .rute-info {
+        margin-top: 30px;
+    }
+
+    .rute-info h4 {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .gron-rute {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gron-rute h2 {
+        padding-top: 50px;
+        padding-bottom: 15px;
+        color: rgb(21, 119, 26);
+    }
+
+    .gron-rute img {
+        width: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .gron-rute p{
+        padding: 15px;
+        max-width: 320px;
+    }
+
+    .gul-rute {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gul-rute h2 {
+        margin-top: 80px;
+        padding-bottom: 15px;
+        color: rgb(199, 199, 0);
+    }
+
+    .gul-rute img {
+        width: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .gul-rute p{
+        padding: 15px;
+        max-width: 320px;
+    }
+
+    .rod-rute {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rod-rute h2 {
+        margin-top: 100px;
+        padding-bottom: 15px;
+        color: rgb(181, 42, 42);
+    }
+
+    .rod-rute img {
+        width: 300px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .rod-rute p{
+        padding: 15px;
+        max-width: 320px;
+        margin-bottom: 80px;
+    }
+    /*rutevejledning*/
+
+    /*footer*/
+    .footer {
+        background-color: #283852;
+        position: relative;
+    }
+
+    .logo-footer {
+        width: 70px;
+        display: flex;
+        margin: auto;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .socials h3 {
+        color: white;
+        font-size: 22px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .socials-link {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .socials-link a{
+        color: white;
+        padding: 0 15px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .kontakt-socials {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 15px
+    }
+
+    .kontakt {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .kontakt h3 {
+        color: white;
+        font-size: 22px;
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+    }
+
+    .kontakt p {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    /*footer slut*/
+
+}
+/*breakpoint max-769px slut*/
+
+/*breakpoint min-600px*/
+@media (min-width:600px) {
+     
+
+    /*forside video*/
+     .forside-overskrift {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin-bottom: 100px;
+        z-index: 1;
+    }
+    
+    .forside-overskrift h1 {
+        font-size: 60px;
+    }
+    
+    .forside-overskrift p {
+        font-size: 20px;
+        font-style: italic;
+    }
+
+    .video-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .video {
+        position: relative;
+    }
+    /*forside video slut*/
+
+    /*forside-iconer*/
+    .icon-container {
+        position: absolute;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .icons {
+        display: flex;
+    }
+
+    .icons li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .icons i {
+        padding: 10px 100px;
+    }
+    
+    #rute-icon {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+    }
+    
+    #gear-icon {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+    }
+    
+    #blog-icon {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 30px;
+        color: white;
+    }
+    /*forside-iconer slut*/
+
+    /*niveau section*/
+    .niveau {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        max-width: 450px;
+    }
+    
+    .niveau h2 {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .slide-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+        max-width: 1120px;
+        width: 100%;
+        padding: 40px 0;
+    }
+
+    .slide-content {
+        margin: 0 40px;
+    }
+
+    .card {
+        width: 320px;
+        border-radius: 25px;
+        background-color: white;
+    }
+
+    .image-content,
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 14px;
+    }
+
+    .image-content {
+        position: relative;
+        row-gap: 5px;
+        padding: 25px 0;
+    }
+
+    .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color:#283852;
+        border-radius: 25px 25px 0 25px;
+    }
+
+    .overlay::before,
+    .overlay::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -40px;
+        height: 40px;
+        width: 40px;
+        background-color:#283852;
+    }
+
+    .overlay::after {
+        border-radius: 0 25px 0 0;
+        background-color: white;
+    }
+
+    .card-image img{
+        position: relative;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: #ffffff;
+        padding: 3px;
+    }
+
+    .card-image .card-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .navn {
+        font-size: 22px;
+        color: #283852;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        font-size: 14px;
+        color: rgb(100, 100, 100);
+        text-align: center;
+    }
+    /*niveau section slut*/
+
+    /*galleri*/
+    .galleri {
+        background-color: #283852;
+        padding: 10px 0;
+    }
+
+    .galleri h2{
+        display: flex;
+        justify-content: center;
+        font-size: 30px;
+        margin-bottom: 50px;
+        margin-top: 80px;
+        color: white;
+    }
+
+    .slide-img {
+        height: 100%;
+        text-align: center;
+    }
+
+    .slide-img img{
+        width: 280px;
+        border-radius: 8px;
+    }
+
+
+    .slider {
+        position: relative;
+        left: 10%;
+        width: 90%;
+        height: 500px;
+        overflow: hidden;
+    }
+
+    .slider-inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: auto;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 10px;
+        pointer-events: none;
+        transition: 0s ease-in;
+    }
+
+    .pile {
+        display: flex;
+        justify-content: space-between;
+        font-size: 30px;
+        margin: 0 20px;
+        color: white;
+        opacity: 15%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .udforsk {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 60px;
+    }
+
+    .udforsk-knap a {
+        position: relative;
+        background: white;
+        color: #283852;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .4s;
+        overflow: hidden;
+    }
+
+    .udforsk-knap a:hover {
+        width: 120px;
+        transition-delay: 0s;
+        border-radius: 15px;
+    }
+
+    .udforsk-knap a::before {
+        content: "";
+        position: absolute;
+        right: 18px;
+        width: 8px;
+        height: 8px;
+        border-top: 3px solid #283852;
+        border-right: 3px solid #283852;
+        transform: rotate(45deg);
+    }
+
+    .udforsk-knap a span {
+        visibility: hidden;
+        transition: .3s ease-in-out;
+        opacity: 0;
+    }
+
+    .udforsk-knap a:hover span{
+        visibility: visible;
+        transition-delay: .3s;
+        opacity: 1;
+    }
+    /*galleri slut*/
+
+    /*rutevejledning*/
+    .rutevejl {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 30px;
+    }
+
+    .rutevejl p {
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+
+    .rute-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1120px;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .rute-content {
+        margin: 0 40px;
+    }
+
+    .rute-card {
+        width: 320px;
+        border-radius: 25px;
+        background-color: white;
+    }
+
+    .rute-image-content,
+    .rute-card-content {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 14px;
+    }
+
+    .rute-image-content {
+        position: relative;
+        row-gap: 5px;
+        padding: 25px 25px;
+    }
+
+    .rute-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(21, 119, 26);
+        border-radius: 25px 25px 0 25px;
+    }
+
+    .rute-overlay::after {
+        border-radius: 0 25px 0 0;
+        background-color: white;
+    }
+
+    .rute-card-image img{
+        position: relative;
+        width: 100%;
+        height: 200px;
+        border-radius: 20px;
+        background: #ffffff;
+        padding: 3px;
+    }
+
+    .rute-card-image .card-img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .rute-navn {
+        display: flex;
+        justify-content: center;
+        font-size: 22px;
+        color: #283852;
+        margin-bottom: 10px;
+    }
+
+    .rute-overskrift {
+        margin: 14px 0;
+    }
+
+    .rute-description {
+        font-size: 14px;
+        color: rgb(100, 100, 100);
+    }
+
+    .rute-button {
+        border: none;
+        font-size: 16px;
+        color: white;
+        padding: 8px 16px;
+        background-color: #283852;
+        border-radius: 6px;
+        margin: 14px 0;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .rute-button:hover {
+        opacity: 70%;
+    }
+
+    #icon-grøn {
+        color: rgb(21, 119, 26);
+        font-size: 25px;
+        padding-left: 10px;
+    }
+
+    .rute-overlay-gul {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(218, 218, 52);
+        border-radius: 25px 25px 0 25px;
+    }
+
+    #icon-gul {
+        color: rgb(218, 218, 52);
+        font-size: 25px;
+        padding-left: 10px;
+    }
+
+    .rute-overlay-rød {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(181, 42, 42);
+        border-radius: 25px 25px 0 25px;
+    }
+
+    #icon-rød {
+        color: rgb(181, 42, 42);
+        font-size: 25px;
+        padding-left: 10px;
+    }   
+    /*rutevejledning slut*/
+
+    /*event sektion*/
+    .tester {
+        display: flex;
+        justify-content: center;
+    }
+
+    .event-overskrift {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        top: 280px;
+        font-size: 30px;
+    }
+
+    .event-overskrift p {
+        padding-top: 15px;
+        font-size: 22px;
+    }
+
+    .event-video {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .event-video iframe {
+        width: 550px;
+        height: 316px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .tekst-wrapper {
+        display: flex;
+        text-align: start;
+        padding: 12px 15px;
+        margin: 60px auto;
+        line-height: 1.5rem;
+        max-width: 550px;
+    }
+    
+    .event-tekst {
+        width: 100%;
+    }
+
+    #event-br2 {
+        padding-top: 15px;
+    }
+
+    #event-br3 {
+        padding-top: 15px;
+    }
+
+    .event-tekst {
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+    }
+
+    .event-video2 {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .event-video2 iframe{
+        width: 550px;
+        height: 316px;
+        border: none;
+        border-radius: 10px;
+    }
+
+    .tilmelding-godkendt {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        line-height: 2rem;
+        font-size: 20px;
+    }
+
+    .tilmelding-godkendt p {
+        font-size: 20px;
+    }
+    /*event sektion slut*/
+
+    /*blog*/
+    .blog-overskrift {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 1;
+        color: #ffffff;
+        font-size: 25px;
+        width: 100%;
+    }
+    
+    .blog-overskrift h1 {
+        position: absolute;
+       display: flex;
+       justify-content: center;
+       margin-top: 50px;
+       padding: 10px;
+       font-size: 35px;
+       border: 1px solid transparent;
+       box-shadow: -5px 0px rgb(255, 242, 1);
+    }
+
+    .detalje-img img{
+        position: relative;
+        top: 0;
+        width: 100%;
+        opacity: 90%;
+    }
+
+    .cykler-wrapper{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+
+    .blog-cykler {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        position: relative;
+        padding: 10px;
+        margin-top: 50px;
+        color: #bababa;
+        font-size: 20px;
+    }
+
+    .blog-cykler i {
+        font-size: 22px;
+        color: rgb(228, 228, 11);
+        padding-bottom: 10px;
+    }
+
+    .blog-cykler p {
+        padding-top: 15px;
+        font-style: italic;
+        font-size: 18px;
+    }
+
+    .slider {
+        position: relative;
+        left: 10%;
+        width: 90%;
+        height: 430px;
+        overflow: hidden;
+    }
+
+    .blog-slide-img {
+        height: 100%;
+        text-align: center;
+        color: white;
+    }
+
+    .blog-slide-img img{
+        width: 400px;
+        border-radius: 8px;
+    }
+
+    .blog-slide-img p {
+        padding-top: 10px;
+        font-size: 18px;
+        font-style: italic;
+    }
+
+    .blog-galleri {
+        background-color: #202020;
+
+    }
+
+    #tredjeplads {
+        color: rgb(151, 100, 7);
+    }
+
+    #andenplads {
+        color: rgb(213, 213, 213);
+    }
+
+    #førsteplads {
+        color: rgb(228, 228, 11);
+    }
+
+    .info-wrapper {
+        position: relative;
+        margin-top: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .infographic h2 {
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        font-size: 25px;
+    }
+
+    .infographic img {
+        width: 600px;
+        margin-bottom: 50px;
+    }
+    
+    .info-mobil {
+        visibility:hidden;
+        height: 300px;
+    }
+
+    .info-comp {
+        position: absolute;
+        visibility: visible;
+    }
+
+    .blog-info-tekst {
+        font-size: 18px;
+        max-width: 600px;
+    }
+    /*blog slut*/
+
+    /*rutevejledning*/
+    .rutevejl-tekst {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        color: #202020;
+    }
+
+    .rutevejl-tekst p {
+        padding-top: 5px;
+        font-size: 20px;
+    }
+
+    .rute-info {
+        margin-top: 30px;
+    }
+
+    .rute-info h4 {
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .gron-rute {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gron-rute h2 {
+        margin-top: 80px;
+        padding-bottom: 15px;
+        font-size: 30px;
+        color: rgb(21, 119, 26);
+    }
+
+    .gron-rute img {
+        width: 400px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .gron-rute p{
+        padding: 15px;
+        max-width: 380px;
+        font-size: 18px;
+    }
+
+    .gul-rute {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gul-rute h2 {
+        margin-top: 80px;
+        padding-bottom: 15px;
+        font-size: 30px;
+        color: rgb(199, 199, 0);
+    }
+
+    .gul-rute img {
+        width: 400px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .gul-rute p{
+        padding: 15px;
+        max-width: 380px;
+        font-size: 18px;
+    }
+
+    .rod-rute {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rod-rute h2 {
+        margin-top: 80px;
+        padding-bottom: 15px;
+        font-size: 30px;
+        color: rgb(181, 42, 42);
+    }
+
+    .rod-rute img {
+        width: 400px;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .rod-rute p{
+        padding: 15px;
+        max-width: 380px;
+        font-size: 18px;
+        margin-bottom: 80px;
+    }
+    /*rutevejledning slut*/
+
+    /*footer*/
+    .footer {
+        background-color: #283852;
+        position: relative;
+        width: 100%;
+    }
+
+    .logo-footer {
+        width: 70px;
+        display: flex;
+        margin: auto;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .socials h3 {
+        color: white;
+        font-size: 22px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .socials-link {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .socials-link a{
+        color: white;
+        padding: 0 15px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .kontakt-socials {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 15px
+    }
+    /*footer slut*/
+
+}
+/*breakpoint min-600px slut*/
+
+/*breakpoint min-770px*/
+@media (min-width:770px) {
+
+/*navbar*/
+.navbar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+.nav-menu {
+    margin-left: auto;
+    margin-right: 30px;
+    padding: 15px 0;
+    font-size: 18px;
+    background: #283852;
+}
+
+.nav-menu li {
+    display: inline-block;
+    position: relative;
+}
+
+.nav-menu li a {
+    display: block;
+    padding: 15px 15px;
+    color: white;
+}
+
+.nav-menu li ul.dropdown li {
+    display: block;
+}
+
+.nav-menu li ul.dropdown {
+    width: 100%;
+    background: #283852;
+    position: absolute;
+    z-index: 5;
+    display: none;
+}
+
+.nav-menu li a:hover {
+    background: #5d6f8d;
+}
+
+.nav-menu li:hover ul.dropdown {
+    display: block;
+}
+
+.logo {
+    position: absolute;
+    left: 50px;
+    top: 15px;
+}
+
+/*searchbar*/
+#search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 6px;
+    width: 32px;
+    height: 32px;
+    background: #5d6f8d;
+    border-radius: 60px;
+    transition: .3s;
+    overflow: hidden;
+}
+
+#search.active {
+    width: 150px;
+    
+}
+
+#search .input {
+    position: relative;
+    width: 100px;
+    height: 28px;
+    left: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sogefelt::placeholder{
+    color: white;
+}
+
+#search .input input {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background-color: #5d6f8d;
+}
+/*searchbar slut*/
+/*navbar slut*/
+
+/*forside video*/
+.forside-overskrift {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: 1;
+}
+
+.forside-overskrift h1 {
+    font-size: 65px;
+    font-family: 'Rubik Distressed';
+}
+
+.forside-overskrift p {
+    font-size: 20px;
+    font-style: italic;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.video {
+    position: relative;
+    height: 800px;
+    opacity: 95%;
+}
+/*forside video slut*/
+
+/*forside-iconer*/
+.icon-container {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    margin-top: 120px;
+}
+
+.icons li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icons i {
+    padding: 10px 100px;
+}
+
+#rute-icon {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+}
+
+#gear-icon {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+}
+
+#blog-icon {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30px;
+}
+/*forside-iconer slut*/
+
+/*Niveau sektion*/
+.niveau {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 600px;
+}
+
+.niveau h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.niveau-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.slide-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 100%;
+    padding: 40px 0;
+    flex-grow: 1;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 400px;
+    background-color:#283852;
+    border-radius: 25px 25px 0 25px;
+}
+
+.card {
+    width: 400px;
+    border-radius: 25px;
+    background-color: white;
+    box-shadow: 0 2px 15px rgb(225, 225, 225);
+}
+
+.card-image img {
+    object-fit: cover;
+}
+
+.button {
+    border: none;
+    font-size: 16px;
+    color: white;
+    padding: 8px 16px;
+    background-color: #283852;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+    opacity: 70%;
+}
+/*Niveau sektion slut*/
+
+/*galleri pile*/
+.pile {
+    visibility: hidden;
+}
+/*galleri pile slut*/
+
+/*Rutevejledning*/
+#rutevejledning {
+    margin-top: 80px;
+}
+
+.rutevejl p {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.rute-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rute-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.rute-content {
+    margin: 0 80px;
+    box-shadow: 0 2px 15px rgb(225, 225, 225);
+    border-radius: 30px;
+}
+
+.rute-card {
+    position: relative;
+    width: 100%;
+    border-radius: 25px;
+    background-color: white;
+    display: flex;
+}
+
+.rute-image-content,
+.rute-card-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 14px;
+}
+
+.rute-image-content {
+    position: relative;
+    row-gap: 5px;
+    padding: 25px 25px;
+}
+
+.rute-overlay {
+    position: absolute;
+    background-color: rgb(21, 119, 26);
+    border-radius: 25px 0 0 25px;
+}
+
+.rute-card-image img{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    background: #ffffff;
+    padding: 3px;
+    object-fit: cover;
+}
+
+.rute-navn {
+    font-size: 22px;
+    color: #283852;
+    margin: 10px;
+}
+
+.rute-overskrift {
+    margin: 18px 0;
+    font-size: 20px;
+}
+
+.rute-description {
+    font-size: 16px;
+    color: rgb(100, 100, 100);
+}
+
+.rute-button {
+    border: none;
+    font-size: 16px;
+    color: white;
+    padding: 5px 25px;
+    background-color: #283852;
+    border-radius: 20px;
+    margin: 14px 0;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.rute-button:hover {
+    opacity: 70%;
+}
+
+#icon-grøn {
+    color: rgb(21, 119, 26);
+    font-size: 25px;
+    padding-left: 10px;
+    margin-top: 50px;
+}
+
+.rute-overlay-gul {
+    position: absolute;
+    background-color: rgb(218, 218, 52);
+    border-radius: 25px 0 0 25px;
+}
+
+#icon-gul {
+    color: rgb(218, 218, 52);
+    font-size: 25px;
+    padding-left: 10px;
+    margin-top: 50px;
+}
+
+.rute-overlay-rød {
+    position: absolute;
+    background-color: rgb(181, 42, 42);
+    border-radius: 25px 0 0 25px;
+}
+
+#icon-rød {
+    color: rgb(181, 42, 42);
+    font-size: 25px;
+    padding-left: 10px;
+    margin-top: 50px;
+} 
+/*rutevejledning slut*/
+
+/*event sektion*/
+.tester {
+    display: flex;
+    justify-content: center;
+}
+
+.event-billede img{
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+    opacity: 85%;
+}
+
+.event-overskrift {
+    position: absolute;
+    top: 350px;
+    margin: auto;
+    z-index: 1;
+    color: white;
+}
+
+.event-overskrift h2{
+    font-size: 40px;
+    font-family: 'rubik distressed';
+}
+
+.event-overskrift p {
+    font-size: 20px;
+}
+
+.event-video {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+    height: 100%;
+}
+
+.event-video p {
+    font-size: 14px;
+}
+
+.event-video iframe {
+    width: 550px;
+    height: 300px;
+}
+
+.tekst-wrapper p{
+    max-width: 600px;
+}
+
+.event-tekst {
+    width: 100%;
+    padding: 12px 15px;
+    color: rgb(54, 54, 54);
+}
+
+.event-video2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+    height: 100%;
+}
+
+.event-video2 p {
+    font-size: 14px;
+}
+
+.event-video2 iframe{
+    width: 550px;
+    height: 300px;
+    border: none;
+}
+
+.event-tilmeld {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.tilmeld {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tilmeld-knap a {
+    position: relative;
+    background: #283852;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .4s;
+    overflow: hidden;
+}
+
+.tilmeld-knap a:hover {
+    width: 120px;
+    transition-delay: .1s;
+    border-radius: 15px;
+}
+
+.tilmeld-knap a::before {
+    content: "";
+    position: absolute;
+    right: 18px;
+    width: 8px;
+    height: 8px;
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    transform: rotate(45deg);
+}
+
+.tilmeld-knap a span {
+    visibility: hidden;
+    transition: .3s ease-in-out;
+    opacity: 0;
+}
+
+.tilmeld-knap a:hover span{
+    visibility: visible;
+    transition-delay: .3s;
+    opacity: 1;
+}
+
+.tilmelding-wrapper {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tilmelding-godkendt img {
+    width: 120px;
+    padding-bottom: 20px;
+}
+
+.tilmelding-godkendt a {
+    color: #283852;
+    transition: all .3s ease-in-out;
+}
+
+.tilmelding-godkendt a:hover {
+    color: #5d6f8d;
+}
+/*event sektion slut*/
+
+/*blog*/
+.blog-overskrift {
+    position: relative;
+    z-index: 1;
+    color: #fcfcfc;
+    width: 100%;
+}
+
+.blog-overskrift h1 {
+   display: flex;
+   margin-top: 200px;
+   padding: 10px;
+   font-size: 40px;
+   position: absolute;
+   color: rgb(255, 255, 255);
+   border: 1px solid transparent;
+   background-color: transparent;
+   box-shadow: -5px 0px rgb(255, 242, 1);
+}
+
+.detalje-img img{
+    position: relative;
+    width: 100%;
+    height: 650px;
+    object-fit:cover;
+    opacity: 90%;
+}
+
+.cykler-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+#stjerne1 {
+    font-size: 16px;
+}
+
+#stjerne3 {
+    font-size: 16px;
+}
+
+.blog-cykler {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    padding: 10px;
+    margin-top: 50px;
+    color: #bababa;
+}
+
+.blog-cykler i {
+    font-size: 22px;
+    color: rgb(228, 228, 11);
+    padding-bottom: 10px;
+}
+
+.blog-cykler p {
+    padding-top: 15px;
+    font-style: italic;
+    font-size: 18px;
+    color: #bababa;
+}
+
+.slider {
+    position: relative;
+    left: 10%;
+    width: 90%;
+    height: 430px;
+    overflow: hidden;
+}
+
+.blog-slide-img {
+    height: 100%;
+    text-align: center;
+    color: white;
+}
+
+.blog-slide-img img{
+    width: 500px;
+    border-radius: 8px;
+}
+
+.blog-slide-img p {
+    padding-top: 10px;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.blog-galleri {
+    background-color: #202020;
+}
+
+.info-wrapper {
+    position: relative;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infographic h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.infographic img{
+    width: 1000px;
+    display: flex;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.info-comp {
+    position: absolute;
+    z-index: 1;
+    top:60px;
+    margin-top: 20px;
+}
+
+.blog-info-tekst {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    line-height: 1.5rem;
+    margin-top: 250px;
+    margin-bottom: 80px;
+    max-width: 600px;
+}
+
+.blog-info-tekst h3 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.blog-info-tekst span {
+    font-style: italic;
+    padding: 0 8px;
+}
+
+#blog-info2 {
+    padding-top: 15px;
+}
+/*blog slut*/
+
+/*rutevejledning*/
+.rutevejl-billede img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.rutevejl-tekst {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    color: #202020;
+}
+
+.rutevejl-tekst p {
+    padding-top: 5px;
+    font-size: 20px;
+}
+
+.rute-kort {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    padding: 0 50px;
+}
+
+.rute-info {
+    margin-top: 80px;
+}
+
+.rute-info h4 {
+    text-align: center;
+    font-size: 22px;
+}
+
+.gron-rute {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gron-rute h2 {
+    padding-bottom: 15px;
+    font-size: 30px;
+    color: rgb(21, 119, 26);
+}
+
+.gron-rute img {
+    width: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.gron-rute p{
+    padding: 15px;
+    max-width: 380px;
+    font-size: 18px;
+}
+
+.gul-rute {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gul-rute h2 {
+    padding-bottom: 15px;
+    font-size: 30px;
+    color: rgb(199, 199, 0);
+}
+
+.gul-rute img {
+    width: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.gul-rute p{
+    padding: 15px;
+    max-width: 380px;
+    font-size: 18px;
+}
+
+.rod-rute {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rod-rute h2 {
+    padding-bottom: 15px;
+    font-size: 30px;
+    color: rgb(181, 42, 42);
+}
+
+.rod-rute img {
+    width: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.rod-rute p{
+    padding: 15px;
+    max-width: 380px;
+    font-size: 18px;
+}
+/*rutevejledning slut*/
+
+/*footer*/
+.footer {
+    padding: 30px 50px;
+}
+
+.logo-footer {
+    width: 100px;
+}
+
+.kontakt-socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.socials i {
+    color: white;
+    transition: all .3s ease-in-out;
+}
+
+.socials i:hover {
+    color: #5d6f8d;
+}
+
+.kontakt {
+    display: flex;
+    flex-direction: column;
+}
+
+.kontakt h3 {
+    color: white;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.kontakt p {
+    color: white;
+    display: flex;
+    padding-bottom: 15px;
+}
+
+.kontakt p i{
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/*footer slut*/
+
+
+}
+/*breakpoint min 770px slut*/
+
+

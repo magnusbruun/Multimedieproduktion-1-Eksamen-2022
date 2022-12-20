@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://magnusbruun.dk/schemas/sitemap/0.9">
+
+<url>
+    <loc>https://magnusbruun.dk/<loc>
+    <lastmod>2022-12-20</lastmod>
+</url>
+
+<url>
+    events.html
+</url>
+
+<url>
+    rutevejledning.html
+</url>
+
+</urlset>

@@ -1,0 +1,6 @@
+# robots.org
+
+Sitemap: https://magnusbruun.dk/sitemap.xml
+
+User-agent: *
+Disallow

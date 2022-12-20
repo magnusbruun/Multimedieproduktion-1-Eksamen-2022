@@ -1,0 +1,11 @@
+Dette projekt er udarbejdet af Magnus Bruun. Han er den eneste i sin klasse som har valgt dette emnet, Jensen Cykler - Mountainbike, 
+men det har ikke stoppet ham fra at gøre sit bedste.
+
+Han har brugt HTML, CSS og en smule Javascript.
+De fleste billeder og videoer er produceret selv.
+Tak til fontawsome, for nogle gode iconer og Unsplash for de billeder som ikke selv kunne lade sig gøre at tage.
+
+Processen har været lang og hård, men ikke mindst sjov.
+Han er i sidste ende meget tilfreds med resultatet :)
+
+God jul, godt nytår og alt det der kommer efter.
